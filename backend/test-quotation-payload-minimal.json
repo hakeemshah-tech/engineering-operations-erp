@@ -1,0 +1,63 @@
+{
+  "lead": "507f1f77bcf86cd799439011",
+  "companyInfo": {
+    "name": "Engineering Operations ERP",
+    "address": "Dubai, UAE",
+    "phone": "+971 4 123 4567",
+    "email": "info@example.com"
+  },
+  "submittedTo": "ABC Construction Company",
+  "attention": "Project Manager",
+  "offerReference": "ERP-Q-2024-001",
+  "enquiryNumber": "ENQ-2024-045",
+  "offerDate": "2024-01-15",
+  "enquiryDate": "2024-01-10",
+  "projectTitle": "Sample Project",
+  "introductionText": "Please find our quotation for the requested works.",
+  "scopeOfWork": [
+    {
+      "description": "Sample work item",
+      "quantity": 1,
+      "unit": "Lot",
+      "locationRemarks": "Site location"
+    }
+  ],
+  "priceSchedule": {
+    "items": [
+      {
+        "description": "Sample work item",
+        "quantity": 1,
+        "unit": "Lot",
+        "unitRate": 100000,
+        "totalAmount": 100000
+      }
+    ],
+    "subTotal": 100000,
+    "grandTotal": 105000,
+    "currency": "AED",
+    "taxDetails": {
+      "vatRate": 5,
+      "vatAmount": 5000
+    }
+  },
+  "ourViewpoints": "Standard quality workmanship guaranteed.",
+  "exclusions": [
+    "Civil works",
+    "Permits and approvals"
+  ],
+  "paymentTerms": [
+    {
+      "milestoneDescription": "Upon completion",
+      "amountPercent": 100
+    }
+  ],
+  "deliveryCompletionWarrantyValidity": {
+    "deliveryTimeline": "4 weeks",
+    "warrantyPeriod": "12 months",
+    "offerValidity": 30,
+    "authorizedSignatory": "Authorized Person"
+  }
+}
+
+
+

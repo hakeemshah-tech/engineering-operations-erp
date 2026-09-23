@@ -1,0 +1,202 @@
+.vehicle-management {
+  padding: 24px;
+}
+
+.vehicle-management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.vehicle-management-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 4px 0;
+}
+
+.vehicle-management-header p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.vehicle-status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.vehicle-status-badge.active {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.vehicle-status-badge.maintenance {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.vehicle-status-badge.idle {
+  background: rgba(107, 114, 128, 0.1);
+  color: #6b7280;
+}
+
+.vehicle-docs-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.vehicle-table-row {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.vehicle-table-row:hover {
+  background: rgba(99, 102, 241, 0.05) !important;
+}
+
+.vehicle-modal {
+  display: grid;
+  gap: 16px;
+}
+
+.vehicle-modal-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.vehicle-modal-section.three-col {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.vehicle-modal-section.full {
+  grid-template-columns: 1fr;
+}
+
+.vehicle-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vehicle-modal-field label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.vehicle-modal-field input,
+.vehicle-modal-field select {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-family: inherit;
+}
+
+.vehicle-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.vehicle-modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.vehicle-modal-actions .cancel-btn {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.vehicle-modal-actions .save-btn {
+  background: #6366f1;
+  color: #fff;
+}
+
+.confirm-modal {
+  text-align: center;
+}
+
+.confirm-modal-text {
+  color: var(--text);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.confirm-modal-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.confirm-modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.confirm-modal-buttons .cancel-btn {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.confirm-modal-buttons .delete-btn {
+  background: #ef4444;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .vehicle-management-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .vehicle-modal-section {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicle-modal-section.three-col {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicle-modal-actions {
+    flex-direction: column;
+  }
+
+  .vehicle-modal-actions button {
+    width: 100%;
+  }
+
+  .confirm-modal-buttons {
+    flex-direction: column;
+  }
+
+  .confirm-modal-buttons button {
+    width: 100%;
+  }
+}

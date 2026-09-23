@@ -1,0 +1,434 @@
+/* AttendanceIPLockSection - uses existing design tokens. */
+
+.ipl-root {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 980px;
+}
+
+.ipl-root code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  font-size: 0.86em;
+  background: rgba(99, 102, 241, 0.08);
+  padding: 1px 6px;
+  border-radius: 4px;
+  color: var(--text);
+}
+
+/* ---------- Status banner ---------- */
+
+.ipl-status {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.ipl-status-light {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.ipl-status-on  .ipl-status-light { background: #10b981; box-shadow: 0 0 14px rgba(16, 185, 129, 0.7); }
+.ipl-status-off .ipl-status-light { background: #94a3b8; }
+
+.ipl-status-title { font-size: 1.02rem; color: var(--text); }
+.ipl-status-sub { color: var(--text-muted); font-size: 0.88rem; margin-top: 2px; }
+
+/* ---------- Callouts (info / warning / danger / success) ---------- */
+
+.ipl-callout {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.ipl-callout-icon { font-size: 1.1rem; line-height: 1.4; flex-shrink: 0; }
+.ipl-callout-title { font-weight: 600; margin-bottom: 4px; }
+.ipl-callout-text { line-height: 1.55; }
+.ipl-callout-text ol, .ipl-callout-text ul { margin: 6px 0 0 18px; padding: 0; }
+.ipl-callout-text li { margin: 4px 0; }
+
+.ipl-list-ol { margin: 0; padding-left: 20px; }
+.ipl-list-ol li { margin-bottom: 6px; }
+
+/* ---------- Card ---------- */
+
+.ipl-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.ipl-card-header h4 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.ipl-card-header p {
+  margin: 0 0 12px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.ipl-count {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+.ipl-empty {
+  padding: 14px;
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.9rem;
+  background: var(--bg);
+  border-radius: 8px;
+  margin: 8px 0;
+}
+
+.ipl-hint {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ---------- "What's my IP" ---------- */
+
+.ipl-myip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ipl-myip-value {
+  font-size: 1rem;
+  padding: 6px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+/* ---------- Entry rows (lists) ---------- */
+
+.ipl-entry-list {
+  list-style: none;
+  margin: 8px 0 14px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ipl-entry-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.ipl-entry-row-stack {
+  flex-wrap: wrap;
+}
+
+.ipl-entry-meta {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  background: var(--card);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.ipl-entry-label {
+  font-size: 0.85rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.ipl-entry-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.ipl-entry-sub {
+  flex-basis: 100%;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Add forms ---------- */
+
+.ipl-add-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.ipl-add-row input,
+.ipl-add-row select {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.ipl-add-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr auto;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.ipl-add-grid input,
+.ipl-add-grid select {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.88rem;
+  min-width: 0;
+}
+
+@media (max-width: 720px) {
+  .ipl-add-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Test IP block ---------- */
+
+.ipl-test {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.ipl-test input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+/* ---------- Collapsible guidance ---------- */
+
+.ipl-collapsible summary {
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  outline: none;
+  color: var(--text);
+  padding: 6px 0;
+  position: relative;
+  padding-left: 22px;
+}
+.ipl-collapsible summary::-webkit-details-marker { display: none; }
+.ipl-collapsible summary::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  transition: transform 0.18s ease;
+}
+.ipl-collapsible[open] summary::before { transform: rotate(90deg); }
+
+.ipl-card-body { margin-top: 10px; }
+.ipl-card-body h5 {
+  margin: 14px 0 6px;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+.ipl-card-body p { margin: 0 0 6px; color: var(--text-muted); font-size: 0.88rem; line-height: 1.55; }
+.ipl-card-body ul, .ipl-card-body ol { margin: 6px 0 6px 22px; color: var(--text-muted); font-size: 0.88rem; }
+.ipl-card-body li { margin: 4px 0; line-height: 1.5; }
+
+/* ---------- Master toggle card ---------- */
+
+.ipl-master {
+  border: 2px solid var(--primary, #6366f1);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.04), rgba(139, 92, 246, 0.04));
+}
+
+.ipl-master-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 12px;
+}
+
+.ipl-master-row h4 { margin: 0 0 4px; color: var(--text); }
+.ipl-master-row p  { margin: 0; font-size: 0.88rem; color: var(--text-muted); max-width: 60ch; line-height: 1.55; }
+
+.ipl-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+/* ---------- Toggle component ---------- */
+
+.ipl-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.ipl-toggle.disabled { opacity: 0.5; cursor: not-allowed; }
+.ipl-toggle input { position: absolute; opacity: 0; pointer-events: none; }
+
+.ipl-toggle-track {
+  width: 48px;
+  height: 26px;
+  background: #94a3b8;
+  border-radius: 999px;
+  position: relative;
+  transition: background 0.18s ease;
+  flex-shrink: 0;
+}
+.ipl-toggle.on .ipl-toggle-track { background: #10b981; }
+
+.ipl-toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  transition: left 0.18s ease;
+}
+.ipl-toggle.on .ipl-toggle-thumb { left: 25px; }
+
+.ipl-toggle-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ---------- Buttons ---------- */
+
+.ipl-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+  white-space: nowrap;
+}
+.ipl-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.ipl-btn-ghost {
+  background: var(--bg);
+  border-color: var(--border);
+  color: var(--text);
+}
+.ipl-btn-ghost:hover:not(:disabled) {
+  background: var(--card);
+  border-color: var(--primary, #6366f1);
+}
+
+.ipl-btn-primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+.ipl-btn-primary:hover:not(:disabled) { transform: translateY(-1px); }
+
+.ipl-btn-danger {
+  background: #ef4444;
+  color: white;
+}
+.ipl-btn-danger:hover:not(:disabled) { background: #dc2626; }
+
+.ipl-btn-danger-ghost {
+  background: transparent;
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #b91c1c;
+  padding: 5px 12px;
+  font-size: 0.82rem;
+}
+.ipl-btn-danger-ghost:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.08);
+}
+
+/* ---------- Confirm modal ---------- */
+
+.ipl-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.ipl-modal {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 22px 20px;
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+.ipl-modal h3 { margin: 0; color: var(--text); font-size: 1.1rem; }
+.ipl-modal p { margin: 0; color: var(--text); font-size: 0.92rem; line-height: 1.55; }
+
+.ipl-modal-checklist {
+  font-size: 0.88rem;
+  color: var(--text);
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+.ipl-modal-checklist ul { margin: 6px 0 0 18px; padding: 0; color: var(--text-muted); }
+.ipl-modal-checklist li { margin: 2px 0; }
+
+.ipl-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}

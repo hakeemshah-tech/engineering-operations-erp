@@ -1,0 +1,276 @@
+/* Spinner */
+.spinner {
+  display: inline-block;
+  position: relative;
+}
+
+.spinner-circle {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top-color: var(--primary, #2563eb);
+  border-radius: 50%;
+  animation: spinner-rotate 0.8s linear infinite;
+  width: 100%;
+  height: 100%;
+}
+
+.spinner-small {
+  width: 16px;
+  height: 16px;
+}
+
+.spinner-medium {
+  width: 24px;
+  height: 24px;
+}
+
+.spinner-large {
+  width: 40px;
+  height: 40px;
+}
+
+@keyframes spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .spinner-circle {
+    animation: none;
+    border-top-color: var(--primary, #2563eb);
+  }
+}
+
+/* Dots Loader */
+.dots-loader {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.dots {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.dots span {
+  animation: dots-bounce 1.4s infinite ease-in-out both;
+  display: inline-block;
+}
+
+.dots span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes dots-bounce {
+  0%, 80%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dots span {
+    animation: none;
+    opacity: 0.5;
+  }
+}
+
+/* Skeleton Shimmer */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.06) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.06) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  display: block;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+    background: rgba(0, 0, 0, 0.08);
+  }
+}
+
+.skeleton-title {
+  margin-bottom: 8px;
+}
+
+.skeleton-subtitle {
+  margin-bottom: 12px;
+}
+
+.skeleton-card {
+  padding: 16px;
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 8px;
+  background: var(--card, #ffffff);
+}
+
+.skeleton-card .skeleton {
+  margin-bottom: 8px;
+}
+
+.skeleton-row td {
+  padding: 12px;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+  width: 100%;
+}
+
+.progress-label {
+  font-size: 14px;
+  color: var(--text, #1f2937);
+  margin-bottom: 4px;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--primary, #2563eb);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-percentage {
+  font-size: 12px;
+  color: var(--text-muted, #6b7280);
+  margin-top: 4px;
+  text-align: right;
+}
+
+/* Circular Progress */
+.circular-progress {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circular-progress-svg {
+  transform: rotate(-90deg);
+}
+
+.circular-progress-background {
+  stroke: rgba(0, 0, 0, 0.1);
+  stroke-width: 4;
+}
+
+.circular-progress-fill {
+  stroke: var(--primary, #2563eb);
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.circular-progress-label {
+  position: absolute;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text, #1f2937);
+}
+
+/* Button Loader */
+.button-loader {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-loader-text {
+  display: inline-block;
+}
+
+/* Page Skeleton */
+.page-skeleton {
+  padding: 24px;
+}
+
+.skeleton-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.skeleton-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.skeleton-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+/* Field Loader */
+.field-loader {
+  position: relative;
+  display: inline-block;
+}
+
+.field-loader-spinner {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Loading overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(2px);
+}
+
+.loading-overlay-content {
+  text-align: center;
+}
+
+.loading-overlay-content .spinner {
+  margin-bottom: 16px;
+}
+

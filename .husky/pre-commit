@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+# Format and lint only what is actually staged, then re-stage the rewrites.
+# lint-staged config lives in the root package.json.
+npx --no-install lint-staged

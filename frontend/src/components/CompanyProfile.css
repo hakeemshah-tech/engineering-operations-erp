@@ -1,0 +1,239 @@
+.company-profile {
+  padding: 24px;
+  padding-bottom: 120px;
+}
+
+.company-profile-header {
+  margin-bottom: 32px;
+}
+
+.company-profile-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.company-profile-header p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.profile-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.profile-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 16px 0;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  background: var(--input-bg);
+  color: var(--text);
+  font-family: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-row.single {
+  grid-template-columns: 1fr;
+}
+
+.save-button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  box-shadow: var(--shadow-lg);
+  z-index: 100;
+}
+
+.save-button button {
+  padding: 10px 24px;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.save-button button:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.logo-uploader {
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  background: var(--input-bg);
+  transition: all 0.2s;
+}
+
+.logo-uploader:hover {
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.02);
+}
+
+.logo-preview {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 4px;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.edit-history {
+  margin-top: 24px;
+}
+
+.edit-entry {
+  padding-left: 16px;
+  border-left: 2px solid var(--border);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.edit-entry-header {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0 0 4px 0;
+}
+
+.edit-entry-change {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 2px 0;
+}
+
+.banking-section {
+  border-color: #f59e0b;
+  background-color: rgba(245, 158, 11, 0.02);
+}
+
+.banking-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.notification {
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.notification.success {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.notification.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+/* Address section special handling */
+.address-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.address-grid.two-column {
+  grid-template-columns: 1fr 1fr;
+}
+
+.address-subsection h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 12px 0;
+}
+
+.address-input-group {
+  margin-bottom: 12px;
+}
+
+.address-input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .address-grid.two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .address-input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .save-button {
+    flex-direction: column;
+  }
+
+  .save-button button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,373 @@
+.document-management {
+  padding: 24px;
+}
+
+.document-management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.document-management-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 4px 0;
+}
+
+.document-management-header p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.filter-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.filter-grid input,
+.filter-grid select {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  background: var(--input-bg);
+  color: var(--text);
+}
+
+.documents-table {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.documents-table-wrapper {
+  overflow-x: auto;
+}
+
+.documents-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.documents-table thead {
+  background: var(--input-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.documents-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.documents-table tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.documents-table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.documents-table td {
+  padding: 12px;
+  color: var(--text);
+}
+
+.doc-number {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.doc-type {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.priority-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.priority-badge.critical {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.priority-badge.high {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.priority-badge.normal {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.priority-badge.low {
+  background: rgba(107, 114, 128, 0.1);
+  color: #6b7280;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+}
+
+.empty-state {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.empty-state-icon {
+  font-size: 40px;
+  margin: 0 0 12px 0;
+}
+
+.empty-state-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 4px 0;
+}
+
+.empty-state-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.pagination {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.pagination button {
+  padding: 6px 12px;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.pagination button:disabled {
+  background: var(--input-bg);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.modal-form {
+  display: grid;
+  gap: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-field label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-family: inherit;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-field input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.file-uploader {
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  background: var(--input-bg);
+  transition: all 0.2s;
+}
+
+.file-uploader:hover {
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.02);
+}
+
+.file-uploader-input {
+  display: none;
+}
+
+.file-uploader-text {
+  color: var(--text-muted);
+  margin: 0 0 4px 0;
+}
+
+.file-uploader-count {
+  font-size: 12px;
+  color: #6366f1;
+  margin: 8px 0 0 0;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-actions .cancel-btn {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.modal-actions .save-btn {
+  background: #6366f1;
+  color: #fff;
+}
+
+.confirm-modal {
+  text-align: center;
+}
+
+.confirm-modal-text {
+  color: var(--text);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.confirm-modal-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.confirm-modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.confirm-modal-buttons .cancel-btn {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.confirm-modal-buttons .delete-btn {
+  background: #ef4444;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .document-management-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .documents-table-wrapper {
+    font-size: 12px;
+  }
+
+  .documents-table th,
+  .documents-table td {
+    padding: 8px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .pagination {
+    flex-direction: column;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .modal-actions button {
+    width: 100%;
+  }
+}

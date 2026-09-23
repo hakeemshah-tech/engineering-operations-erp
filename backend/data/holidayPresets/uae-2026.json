@@ -1,0 +1,20 @@
+{
+  "key": "uae-2026",
+  "label": "UAE Public Holidays 2026",
+  "year": 2026,
+  "holidays": [
+    { "date": "2026-01-01", "name": "New Year's Day", "scope": "all", "paid": true, "recurringYearly": false },
+    { "date": "2026-03-20", "name": "Eid al-Fitr (Day 1)", "scope": "all", "paid": true, "recurringYearly": false, "notes": "Subject to moon sighting" },
+    { "date": "2026-03-21", "name": "Eid al-Fitr (Day 2)", "scope": "all", "paid": true, "recurringYearly": false, "notes": "Subject to moon sighting" },
+    { "date": "2026-03-22", "name": "Eid al-Fitr (Day 3)", "scope": "all", "paid": true, "recurringYearly": false, "notes": "Subject to moon sighting" },
+    { "date": "2026-05-26", "name": "Arafat Day", "scope": "all", "paid": true, "recurringYearly": false, "notes": "Subject to moon sighting" },
+    { "date": "2026-05-27", "name": "Eid al-Adha (Day 1)", "scope": "all", "paid": true, "recurringYearly": false, "notes": "Subject to moon sighting" },
+    { "date": "2026-05-28", "name": "Eid al-Adha (Day 2)", "scope": "all", "paid": true, "recurringYearly": false, "notes": "Subject to moon sighting" },
+    { "date": "2026-05-29", "name": "Eid al-Adha (Day 3)", "scope": "all", "paid": true, "recurringYearly": false, "notes": "Subject to moon sighting" },
+    { "date": "2026-06-16", "name": "Islamic New Year", "scope": "all", "paid": true, "recurringYearly": false, "notes": "Subject to moon sighting" },
+    { "date": "2026-08-25", "name": "Prophet Muhammad's Birthday", "scope": "all", "paid": true, "recurringYearly": false, "notes": "Subject to moon sighting" },
+    { "date": "2026-12-01", "name": "Commemoration Day", "scope": "all", "paid": true, "recurringYearly": true },
+    { "date": "2026-12-02", "name": "UAE National Day", "scope": "all", "paid": true, "recurringYearly": true },
+    { "date": "2026-12-03", "name": "UAE National Day (Day 2)", "scope": "all", "paid": true, "recurringYearly": true }
+  ]
+}

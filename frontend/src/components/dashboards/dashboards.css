@@ -1,0 +1,294 @@
+/* Shared dashboard styling for Main / Inventory / Procurement dashboards.
+   Uses design tokens from src/design-system/tokens.css. */
+
+.dash-page {
+  padding: var(--spacing-lg, 24px);
+  color: var(--text);
+}
+
+.dash-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-md, 16px);
+  margin-bottom: var(--spacing-lg, 24px);
+  flex-wrap: wrap;
+}
+
+.dash-page-title {
+  margin: 0 0 4px 0;
+  font-size: var(--font-size-2xl, 1.5rem);
+  font-weight: 600;
+}
+
+.dash-page-subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm, 0.875rem);
+  max-width: 80ch;
+  line-height: 1.5;
+}
+
+.dash-loading {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* ---- KPI grid + tiles ---- */
+.dash-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.dash-kpi {
+  position: relative;
+  padding: 16px 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s, box-shadow 0.18s;
+  overflow: hidden;
+}
+
+.dash-kpi.dash-kpi-clickable {
+  cursor: pointer;
+}
+
+.dash-kpi.dash-kpi-clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.dash-kpi-accent {
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--primary);
+}
+
+.dash-kpi-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.dash-kpi-value {
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.dash-kpi-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.dash-kpi-delta {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.dash-kpi-delta-up   { background: rgba(16, 185, 129, 0.15); color: #047857; }
+.dash-kpi-delta-down { background: rgba(239, 68, 68, 0.15); color: #b91c1c; }
+.dash-kpi-delta-flat { background: var(--input); color: var(--text-muted); }
+
+/* ---- Section card ---- */
+.dash-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+.dash-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.dash-section-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.dash-section-link {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+.dash-section-link:hover { text-decoration: underline; }
+
+.dash-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* ---- Status bar chart (horizontal) ---- */
+.dash-status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dash-status-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 56px;
+  align-items: center;
+  gap: 12px;
+}
+
+.dash-status-label {
+  font-size: 0.85rem;
+  color: var(--text);
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.dash-status-bar-track {
+  position: relative;
+  height: 10px;
+  background: var(--input);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.dash-status-bar-fill {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  border-radius: 999px;
+  background: var(--primary);
+  transition: width 0.4s ease;
+}
+
+.dash-status-count {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ---- Compact table ---- */
+.dash-table-wrap {
+  overflow-x: auto;
+}
+
+.dash-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.dash-table th,
+.dash-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.dash-table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.dash-table tbody tr:hover {
+  background: var(--input);
+}
+
+.dash-table .dash-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.dash-table .dash-table-empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 24px;
+}
+
+/* ---- Status pill ---- */
+.dash-pill {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.dash-pill-green  { background: rgba(16, 185, 129, 0.15); color: #047857; }
+.dash-pill-amber  { background: rgba(245, 158, 11, 0.15); color: #b45309; }
+.dash-pill-red    { background: rgba(239, 68, 68, 0.15);  color: #b91c1c; }
+.dash-pill-blue   { background: rgba(59, 130, 246, 0.15); color: #1d4ed8; }
+.dash-pill-violet { background: rgba(99, 102, 241, 0.15); color: #4338ca; }
+.dash-pill-slate  { background: rgba(100, 116, 139, 0.15); color: #475569; }
+
+/* ---- Mini metric stack ---- */
+.dash-metric-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dash-metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--input);
+  border-radius: 8px;
+  font-size: 0.88rem;
+}
+
+.dash-metric-name {
+  color: var(--text);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dash-metric-value {
+  font-weight: 700;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- Empty state ---- */
+.dash-empty {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-style: italic;
+}

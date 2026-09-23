@@ -1,0 +1,44 @@
+{
+  "name": "enterprise-erp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ERP platform - MERN monorepo (frontend + backend workspaces)",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "engines": {
+    "node": ">=20.19.0",
+    "npm": ">=10.0.0"
+  },
+  "packageManager": "npm@10.9.2",
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "format": "prettier --write \"**/*.{js,jsx,json,css,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,json,css,md,yml,yaml}\"",
+    "dev:frontend": "npm run dev --workspace frontend",
+    "dev:backend": "npm run dev --workspace backend",
+    "docker:up": "docker compose up --build",
+    "docker:down": "docker compose down -v",
+    "prepare": "node .husky/install.mjs"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.6"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix --no-error-on-unmatched-pattern"
+    ],
+    "*.{json,css,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  }
+}

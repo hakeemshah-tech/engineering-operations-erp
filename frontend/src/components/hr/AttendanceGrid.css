@@ -1,0 +1,237 @@
+.ag-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ag-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ag-toolbar-left, .ag-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ag-toolbar-label {
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.ag-toolbar input[type="date"],
+.ag-toolbar input[type="text"],
+.ag-toolbar select {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--input);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.ag-count-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ag-scroll-outer {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+}
+
+.ag-table {
+  min-width: 100%;
+}
+
+.ag-row {
+  display: grid;
+  grid-template-columns: 40px 200px 140px 130px 90px 100px 90px 90px 90px 120px 200px 50px;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  box-sizing: border-box;
+}
+
+.ag-row.ag-header {
+  background: var(--input);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  height: 44px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.ag-row.ag-status-not_marked { background: rgba(148, 163, 184, 0.08); }
+.ag-row.ag-status-present    { background: rgba(34, 197, 94, 0.08); }
+.ag-row.ag-status-late       { background: rgba(234, 88, 12, 0.10); }
+.ag-row.ag-status-absent     { background: rgba(239, 68, 68, 0.08); }
+.ag-row.ag-status-leave      { background: rgba(245, 158, 11, 0.10); }
+.ag-row.ag-status-half_day   { background: rgba(245, 158, 11, 0.06); }
+.ag-row.ag-status-holiday    { background: rgba(59, 130, 246, 0.08); }
+
+.ag-row.ag-row-modified {
+  box-shadow: inset 3px 0 0 var(--primary);
+}
+
+.ag-row.ag-row-locked {
+  background: rgba(0, 0, 0, 0.06);
+  opacity: 0.72;
+}
+
+.ag-row.ag-row-error {
+  background: rgba(239, 68, 68, 0.12);
+  box-shadow: inset 3px 0 0 #ef4444;
+}
+
+.ag-row.ag-row-clickable {
+  cursor: pointer;
+}
+
+.ag-status-select-not_marked { border-left: 4px solid #94a3b8 !important; }
+.ag-status-select-present    { border-left: 4px solid #16a34a !important; }
+.ag-status-select-late       { border-left: 4px solid #ea580c !important; }
+.ag-status-select-absent     { border-left: 4px solid #dc2626 !important; }
+.ag-status-select-leave      { border-left: 4px solid #d97706 !important; }
+.ag-status-select-half_day   { border-left: 4px solid #f59e0b !important; }
+.ag-status-select-holiday    { border-left: 4px solid #2563eb !important; }
+
+.ag-history-btn {
+  width: 100%;
+  padding: 5px 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--input);
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+}
+.ag-history-btn:hover { border-color: var(--primary); color: var(--primary); }
+.ag-history-btn:disabled { opacity: 0.35; cursor: default; }
+
+.ag-cell {
+  padding: 6px 10px;
+  font-size: 13px;
+  color: var(--text);
+  overflow: hidden;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.ag-cell-flag {
+  text-align: center;
+  font-size: 14px;
+}
+
+.ag-cell-emp {
+  line-height: 1.2;
+}
+.ag-emp-name { font-weight: 500; }
+.ag-emp-id { color: var(--text-muted); font-size: 11px; }
+
+.ag-emp-id-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ag-entry-badge {
+  font-size: 12px;
+  line-height: 1;
+  cursor: help;
+  user-select: none;
+  opacity: 0.85;
+}
+.ag-entry-badge:hover { opacity: 1; }
+
+.ag-emp-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 500;
+  color: var(--primary);
+  text-align: left;
+  cursor: pointer;
+  text-decoration: none;
+}
+.ag-emp-link:hover { text-decoration: underline; }
+
+.ag-cell-meta {
+  color: var(--text-muted);
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ag-cell input,
+.ag-cell select,
+.ag-cell .ag-alloc-btn {
+  width: 100%;
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--input);
+  color: var(--text);
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+.ag-cell input:disabled,
+.ag-cell select:disabled,
+.ag-cell .ag-alloc-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ag-alloc-btn {
+  cursor: pointer;
+  text-align: center;
+}
+.ag-alloc-btn:hover:not(:disabled) {
+  background: var(--card);
+  border-color: var(--primary);
+}
+
+/* Open-log warning state on the row chip - same red palette as ag-time-warn */
+.ag-alloc-btn-warn,
+.ag-alloc-btn-warn:hover:not(:disabled) {
+  border-color: rgba(239, 68, 68, 0.55);
+  background: rgba(239, 68, 68, 0.08);
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+/* Red glow on Time In / Time Out inputs when Time Out is missing.
+   Targets the input directly (the TimeLogsModal puts the class on the input). */
+input.ag-time-warn {
+  border: 1px solid rgba(239, 68, 68, 0.55) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18);
+  background: rgba(239, 68, 68, 0.04);
+  animation: agTimeWarnPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes agTimeWarnPulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18); }
+  50%      { box-shadow: 0 0 0 5px rgba(239, 68, 68, 0.28); }
+}

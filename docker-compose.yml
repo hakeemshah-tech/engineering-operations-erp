@@ -1,0 +1,107 @@
+# Full local stack: React client, Node API, MongoDB, Redis.
+#
+#   cp .env.example .env && docker compose up --build
+#
+# Client  → http://localhost:5173
+# API     → http://localhost:5000
+# Mongo   → mongodb://localhost:27017
+# Redis   → redis://localhost:6379
+
+name: enterprise-erp
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: erp-mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: ${MONGO_DB_NAME:-enterprise_erp}
+    ports:
+      - "${MONGO_PORT:-27017}:27017"
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    networks:
+      - erp-net
+
+  redis:
+    image: redis:7-alpine
+    container_name: erp-redis
+    restart: unless-stopped
+    # Cache-only workload: bounded memory, evict cold keys rather than OOM.
+    command: >
+      redis-server
+      --appendonly no
+      --maxmemory ${REDIS_MAXMEMORY:-256mb}
+      --maxmemory-policy allkeys-lru
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    networks:
+      - erp-net
+
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: erp-api
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+      PORT: 5000
+      # Service name, not localhost: containers resolve each other by name.
+      MONGODB_URI: mongodb://mongo:27017/${MONGO_DB_NAME:-enterprise_erp}
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET must be set in .env}
+      SEED_ADMIN_EMAIL: ${SEED_ADMIN_EMAIL:-admin@example.com}
+      SEED_ADMIN_PASSWORD: ${SEED_ADMIN_PASSWORD:-}
+    ports:
+      - "${API_PORT:-5000}:5000"
+    volumes:
+      # Uploaded files must outlive the container.
+      - uploads-data:/repo/backend/uploads
+    networks:
+      - erp-net
+
+  client:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        # Baked in at build time: Vite has no runtime env. Rebuild the image
+        # after changing this.
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-http://localhost:5000}
+        VITE_GOOGLE_MAPS_API_KEY: ${VITE_GOOGLE_MAPS_API_KEY:-}
+    container_name: erp-client
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "${CLIENT_PORT:-5173}:80"
+    networks:
+      - erp-net
+
+volumes:
+  mongo-data:
+  redis-data:
+  uploads-data:
+
+networks:
+  erp-net:
+    driver: bridge

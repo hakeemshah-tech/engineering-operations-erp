@@ -1,0 +1,85 @@
+/* Design System Tokens */
+
+:root {
+  /* Spacing Scale */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 32px;
+  --spacing-3xl: 48px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+
+  /* Typography */
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 22px;
+  --font-size-3xl: 24px;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+  --transition-slower: 0.4s ease;
+
+  /* Z-Index Scale */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-sidebar: 100;
+  --z-header: 200;
+  --z-modal: 2000;
+  --z-modal-overlay: 2000;
+  --z-modal-route: 2000;
+  --z-tooltip: 3000;
+
+  /* Modal Sizing Tokens - Standardized for Create Quotation and Create Lead */
+  --modal-width-sm: 96vw;
+  --modal-width-md: 72vw;
+  --modal-width-lg: 75vw;
+  --modal-width-xl: 80vw;
+  
+  --modal-max-width-sm: none;
+  --modal-max-width-md: 960px;
+  --modal-max-width-lg: 1100px;
+  --modal-max-width-xl: 1400px;
+  
+  /* Medium breakpoint sizing */
+  --modal-width-md-medium: 68vw;
+  --modal-max-width-md-medium: 800px;
+  
+  /* Small/mobile breakpoint sizing */
+  --modal-width-md-small: 96vw;
+  --modal-max-width-md-small: none;
+  --modal-padding-inline-small: 16px;
+  
+  --modal-max-height: 84vh;
+  --modal-max-height-mobile: 90vh;
+  
+  --modal-padding: var(--spacing-xl);
+  --modal-padding-mobile: var(--spacing-lg);
+
+  /* Modal Overlay Tokens - Shared across all modals */
+  --overlay-bg: rgba(0, 0, 0, 0.48);
+  --overlay-blur: blur(1px);
+  --overlay-z-index: 1000;
+  --overlay-z-index-route: 2000;
+}
+

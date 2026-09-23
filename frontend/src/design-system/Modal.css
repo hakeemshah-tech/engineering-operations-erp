@@ -1,0 +1,183 @@
+@import './tokens.css';
+
+/* Modal Overlay - Matches Add Lead modal styling exactly */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--overlay-z-index);
+  animation: fadeIn var(--transition-slow) ease;
+  -webkit-backdrop-filter: var(--overlay-blur);
+  backdrop-filter: var(--overlay-blur);
+  /* Ensure background is visible and dimmed, not hidden */
+  pointer-events: auto;
+}
+
+.modal-overlay.modal-route {
+  z-index: var(--overlay-z-index-route);
+  /* Same backdrop as Add Lead - keeps Leads list visible */
+  background: var(--overlay-bg) !important;
+  -webkit-backdrop-filter: var(--overlay-blur) !important;
+  backdrop-filter: var(--overlay-blur) !important;
+  animation: fadeIn var(--transition-slow) ease;
+}
+
+/* Ensure modal overlay appears above all content but background remains visible */
+.modal-overlay,
+.modal-overlay.modal-route {
+  position: fixed !important;
+  inset: 0 !important;
+  /* Ensure background is transparent, not opaque - matches Add Lead modal exactly */
+  background-color: rgba(0, 0, 0, 0.48) !important;
+  -webkit-backdrop-filter: blur(1px) !important;
+  backdrop-filter: blur(1px) !important;
+}
+
+/* Modal Container - Base Styles - Standardized for Create Quotation and Create Lead */
+.modal {
+  background: var(--card);
+  border-radius: var(--radius-xl);
+  width: var(--modal-width-md);
+  max-width: var(--modal-max-width-md);
+  max-height: var(--modal-max-height);
+  display: flex;
+  flex-direction: column;
+  animation: modalSlideUp var(--transition-slow) cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  margin: var(--spacing-xl);
+  /* Center horizontally and vertically */
+  position: relative;
+  /* Prevent horizontal overflow */
+  overflow-x: hidden;
+}
+
+/* Modal Size Variants - Standardized */
+.modal-size-small {
+  width: var(--modal-width-sm);
+  max-width: var(--modal-max-width-sm);
+}
+
+.modal-size-medium {
+  width: var(--modal-width-md);
+  max-width: var(--modal-max-width-md);
+}
+
+.modal-size-large {
+  width: var(--modal-width-lg);
+  max-width: var(--modal-max-width-lg);
+}
+
+.modal-size-xlarge {
+  width: var(--modal-width-xl);
+  max-width: var(--modal-max-width-xl);
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xl);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.modal-header h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+  margin: 0;
+}
+
+.close-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Modal Content */
+.modal-content {
+  padding: var(--modal-padding);
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  /* Ensure content scrolls within modal frame, not the page */
+  min-height: 0;
+  /* Prevent horizontal scrollbars */
+  max-width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive Modal Sizing - Standardized breakpoints */
+/* Medium breakpoint (≤1056px) */
+@media (max-width: 1056px) {
+  .modal-size-medium {
+    width: var(--modal-width-md-medium);
+    max-width: var(--modal-max-width-md-medium);
+  }
+}
+
+/* Small/mobile breakpoint (≤672px) */
+@media (max-width: 672px) {
+  .modal {
+    max-height: var(--modal-max-height-mobile);
+    margin: var(--spacing-md);
+    padding-inline: var(--modal-padding-inline-small);
+  }
+  
+  .modal-size-small,
+  .modal-size-medium,
+  .modal-size-large,
+  .modal-size-xlarge {
+    width: var(--modal-width-md-small);
+    max-width: var(--modal-max-width-md-small);
+  }
+  
+  .modal-content {
+    padding: var(--modal-padding-mobile);
+  }
+  
+  .modal-header {
+    padding: var(--modal-padding-mobile);
+  }
+}
+

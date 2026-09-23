@@ -1,0 +1,34 @@
+# Code owners - GitHub requests a review from the matching team on every PR
+# that touches these paths. Last matching pattern wins, so order matters.
+#
+# NOTE: paths here must match the directories that actually exist in this
+# repository. The workspaces are `frontend/` and `backend/`.
+
+# Fallback owner for anything not claimed below.
+*                       @ui-team @backend-team
+
+# ---------------------------------------------------------------------------
+# Application workspaces
+# ---------------------------------------------------------------------------
+/frontend/              @ui-team
+/backend/               @backend-team
+
+# ---------------------------------------------------------------------------
+# Cross-cutting concerns: both teams review
+# ---------------------------------------------------------------------------
+/docs/                  @ui-team @backend-team
+/ARCHITECTURE.md        @ui-team @backend-team
+/README.md              @ui-team @backend-team
+
+# Build, orchestration and governance changes affect everyone.
+/package.json           @ui-team @backend-team
+/package-lock.json      @ui-team @backend-team
+/turbo.json             @ui-team @backend-team
+/docker-compose.yml     @ui-team @backend-team
+/.github/               @ui-team @backend-team
+/.husky/                @ui-team @backend-team
+
+# Container definitions stay with the team that owns the workspace.
+/frontend/Dockerfile    @ui-team
+/frontend/nginx.conf    @ui-team
+/backend/Dockerfile     @backend-team

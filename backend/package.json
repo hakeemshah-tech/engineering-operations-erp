@@ -1,0 +1,56 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "description": "Express 5 + Mongoose API for the Engineering Operations ERP platform",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint .",
+    "test": "jest --passWithNoTests",
+    "test:coverage": "jest --coverage --passWithNoTests",
+    "seed": "node seed.js",
+    "seed:roles": "node seedRoles.js",
+    "seed:coa": "node seedChartOfAccounts.js",
+    "backfill:role-weights": "node backfillRoleWeights.js",
+    "backfill:operational-scope": "node backfillOperationalScope.js",
+    "backfill:control-ledger-names": "node backfillControlLedgerNames.js"
+  },
+  "keywords": [
+    "erp",
+    "express",
+    "mongoose",
+    "rbac"
+  ],
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.18.2",
+    "multer": "^2.0.2",
+    "node-cron": "^3.0.3",
+    "pdfkit": "^0.18.0",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "eslint": "^9.36.0",
+    "globals": "^16.4.0",
+    "jest": "^30.0.5",
+    "nodemon": "^3.1.10"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "utils/**/*.js",
+      "middleware/**/*.js"
+    ]
+  }
+}

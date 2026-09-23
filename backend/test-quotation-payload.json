@@ -1,0 +1,113 @@
+{
+  "lead": "507f1f77bcf86cd799439011",
+  "companyInfo": {
+    "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==",
+    "name": "Engineering Operations ERP",
+    "address": "Building 15, Dubai Industrial City, Dubai, UAE",
+    "phone": "+971 4 123 4567",
+    "email": "info@example.com"
+  },
+  "submittedTo": "ABC Construction Company",
+  "attention": "Mr. John Smith - Project Manager",
+  "offerReference": "ERP-Q-2024-001",
+  "enquiryNumber": "ENQ-2024-045",
+  "offerDate": "2024-01-15",
+  "enquiryDate": "2024-01-10",
+  "projectTitle": "Commercial Building HVAC Installation",
+  "introductionText": "We are pleased to submit our quotation for the HVAC installation works as per your enquiry dated 10th January 2024. This offer is based on the scope of work and specifications provided.",
+  "scopeOfWork": [
+    {
+      "description": "Supply and installation of central air conditioning units (15 TR capacity)",
+      "quantity": 4,
+      "unit": "Nos",
+      "locationRemarks": "Ground floor and basement areas"
+    },
+    {
+      "description": "Ductwork installation including supply and return ducts",
+      "quantity": 500,
+      "unit": "Sq.m",
+      "locationRemarks": "All floors"
+    },
+    {
+      "description": "Electrical wiring and control panel installation",
+      "quantity": 1,
+      "unit": "Lot",
+      "locationRemarks": "Main electrical room"
+    },
+    {
+      "description": "Testing and commissioning of all HVAC systems",
+      "quantity": 1,
+      "unit": "Lot",
+      "locationRemarks": "Complete building"
+    }
+  ],
+  "priceSchedule": {
+    "items": [
+      {
+        "description": "Supply and installation of central air conditioning units (15 TR capacity)",
+        "quantity": 4,
+        "unit": "Nos",
+        "unitRate": 45000,
+        "totalAmount": 180000
+      },
+      {
+        "description": "Ductwork installation including supply and return ducts",
+        "quantity": 500,
+        "unit": "Sq.m",
+        "unitRate": 120,
+        "totalAmount": 60000
+      },
+      {
+        "description": "Electrical wiring and control panel installation",
+        "quantity": 1,
+        "unit": "Lot",
+        "unitRate": 35000,
+        "totalAmount": 35000
+      },
+      {
+        "description": "Testing and commissioning of all HVAC systems",
+        "quantity": 1,
+        "unit": "Lot",
+        "unitRate": 15000,
+        "totalAmount": 15000
+      }
+    ],
+    "subTotal": 290000,
+    "grandTotal": 304500,
+    "currency": "AED",
+    "taxDetails": {
+      "vatRate": 5,
+      "vatAmount": 14500
+    }
+  },
+  "ourViewpoints": "We assure you of our commitment to quality workmanship and timely completion. All materials used will be of international standards and certified. Our team of experienced engineers will ensure proper installation and testing.",
+  "exclusions": [
+    "Civil works and structural modifications",
+    "Permits and approvals from local authorities",
+    "Material procurement delays beyond our control",
+    "Third-party testing and certification charges"
+  ],
+  "paymentTerms": [
+    {
+      "milestoneDescription": "Upon signing of contract",
+      "amountPercent": 30
+    },
+    {
+      "milestoneDescription": "Upon completion of 50% work",
+      "amountPercent": 40
+    },
+    {
+      "milestoneDescription": "Upon completion and handover",
+      "amountPercent": 30
+    }
+  ],
+  "deliveryCompletionWarrantyValidity": {
+    "deliveryTimeline": "8 weeks from date of contract signing",
+    "warrantyPeriod": "12 months from date of handover",
+    "offerValidity": 30,
+    "authorizedSignatory": "Ahmed Al Maktoum"
+  }
+}
+
+
+
